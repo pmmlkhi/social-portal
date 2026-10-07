@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}پوسٹ لکھیں — سوشل میڈیا پورٹل{% endblock %}
+{% block content %}
+<div class="card">
+<h2>نئی پوسٹ</h2>
+{% if result %}
+<div class="alert {{ 'ok' if ok else 'err' }}">{{ result }}</div>
+{% endif %}
+{% if page %}
+<p>پیج: <span class="badge">{{ page.name }}</span></p>
+{% else %}
+<div class="alert err">فیس بک پیج کا ٹوکن نہیں لگا — پوسٹنگ کام نہیں کرے گی۔</div>
+{% endif %}
+<form method="post">
+<label>پوسٹ کا متن</label>
+<textarea name="text" rows="6" placeholder="اپنی پوسٹ یہاں لکھیں..."></textarea>
+<label>اشاعت</label>
+<p><input type="radio" name="mode" value="now" checked style="width:auto"> ابھی شائع کریں</p>
+<p><input type="radio" name="mode" value="schedule" style="width:auto"> شیڈول کریں:
+<input type="datetime-local" name="when" style="width:auto"></p>
+<p style="margin-top:14px"><button class="btn" type="submit">بھیجیں</button></p>
+</form>
+</div>
+{% endblock %}

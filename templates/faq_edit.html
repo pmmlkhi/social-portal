@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}جواب بدلیں — سوشل میڈیا پورٹل{% endblock %}
+{% block content %}
+<div class="card">
+<h2>جواب بدلیں</h2>
+<form method="post">
+<label>پہچانے جانے والے الفاظ (کاما سے الگ کریں)</label>
+<input type="text" name="keywords" value="{{ item.keywords|join(', ') }}">
+<label>بوٹ کا جواب</label>
+<textarea name="answer" rows="8">{{ item.answer }}</textarea>
+<p style="margin-top:12px">
+<button class="btn" type="submit">محفوظ کریں</button>
+<a class="btn" href="/faqs" style="background:#6c757d">واپس</a>
+</p>
+</form>
+</div>
+{% endblock %}

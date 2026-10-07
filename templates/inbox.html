@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}انباکس — سوشل میڈیا پورٹل{% endblock %}
+{% block content %}
+<div class="card">
+<h2>انباکس (تازہ ترین پہلے)</h2>
+<p>فیس بک اور واٹس ایپ سے آنے والے پیغامات اور بوٹ کے جوابات یہاں نظر آئیں گے۔</p>
+</div>
+{% for r in rows %}
+<div class="card">
+<p><span class="badge {% if r.platform == 'whatsapp' %}wa{% endif %}">{{ r.platform }}</span>
+<span class="who">{{ r.ts }}</span></p>
+<div class="msg"><div class="who">آنے والا پیغام:</div><pre>{{ r.text }}</pre></div>
+<div class="msg"><div class="who">بوٹ کا جواب:</div><pre>{{ r.reply }}</pre></div>
+</div>
+{% else %}
+<div class="card"><p>ابھی کوئی پیغام نہیں آیا۔</p></div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}سوشل میڈیا پورٹل{% endblock %}</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,"Noto Nastaliq Urdu",Tahoma,sans-serif;background:#f0f2f5;color:#1c1e21;line-height:1.9}
+nav{background:#14532d;color:#fff;padding:12px 20px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-weight:600}
+nav a:hover{text-decoration:underline}
+nav .brand{font-size:1.2em;margin-left:auto}
+.wrap{max-width:900px;margin:24px auto;padding:0 16px}
+.card{background:#fff;border-radius:10px;padding:20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.btn{display:inline-block;background:#14532d;color:#fff;border:none;border-radius:8px;padding:10px 22px;font-size:1em;cursor:pointer;text-decoration:none}
+.btn:hover{background:#0e3d21}
+textarea,input[type=text],input[type=password],input[type=datetime-local]{width:100%;padding:10px;border:1px solid #ccd0d5;border-radius:8px;font-size:1em;font-family:inherit}
+label{font-weight:600;display:block;margin:12px 0 6px}
+.alert{padding:12px;border-radius:8px;margin-bottom:12px}
+.alert.ok{background:#d4edda;color:#155724}
+.alert.err{background:#f8d7da;color:#721c24}
+table{width:100%;border-collapse:collapse}
+td,th{padding:10px;border-bottom:1px solid #eee;text-align:right;vertical-align:top}
+.badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.85em;background:#e7f3ff;color:#0b5ed7}
+.badge.wa{background:#d4edda;color:#155724}
+.msg{background:#f5f6f7;border-radius:8px;padding:10px;margin:8px 0}
+.msg .who{font-size:.85em;color:#65676b}
+pre{white-space:pre-wrap;font-family:inherit}
+</style>
+</head>
+<body>
+<nav>
+<a class="brand" href="/dashboard">سوشل میڈیا پورٹل</a>
+<a href="/dashboard">ڈیش بورڈ</a>
+<a href="/composer">پوسٹ لکھیں</a>
+<a href="/faqs">بوٹ جوابات</a>
+<a href="/inbox">انباکس</a>
+<a href="/logout">لاگ آؤٹ</a>
+</nav>
+<div class="wrap">
+{% block content %}{% endblock %}
+</div>
+</body>
+</html>

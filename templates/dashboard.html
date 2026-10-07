@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}ڈیش بورڈ — سوشل میڈیا پورٹل{% endblock %}
+{% block content %}
+<div class="card">
+<h2>خوش آمدید</h2>
+<p>یہ آپ کا سوشل میڈیا مینجمنٹ پورٹل ہے — مرحلہ 1</p>
+</div>
+<div class="card">
+<h3>جڑے ہوئے اکاؤنٹس</h3>
+<table>
+<tr><th>پلیٹفارم</th><th>حالت</th></tr>
+<tr>
+<td>فیس بک پیج</td>
+<td>{% if page %}<span class="badge">{{ page.name }}</span>{% elif page_token_set %}<span class="badge">ٹوکن لگا ہے (نام نہیں ملا)</span>{% else %}ٹوکن نہیں لگا{% endif %}</td>
+</tr>
+<tr>
+<td>واٹس ایپ</td>
+<td>{% if wa_ok %}<span class="badge wa">تیار</span>{% else %}ٹوکن نہیں لگا{% endif %}</td>
+</tr>
+</table>
+</div>
+<div class="card">
+<h3>خلاصہ</h3>
+<p>بوٹ کے جوابات: <b>{{ faq_count }}</b> &nbsp;|&nbsp; انباکس پیغامات: <b>{{ inbox_count }}</b></p>
+<p style="margin-top:12px">
+<a class="btn" href="/composer">نئی پوسٹ لکھیں</a>
+<a class="btn" href="/inbox" style="background:#0b5ed7">انباکس دیکھیں</a>
+</p>
+</div>
+{% endblock %}
